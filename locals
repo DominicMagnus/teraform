@@ -1,0 +1,12 @@
+locals {
+  # Ідентифікатори для кількох наборів EC2 інстансів, об'єднані разом
+  instance_ids = concat(aws_instance.blue.*.id, aws_instance.green.*.id)
+}
+
+locals {
+  # Загальні теги, які будуть призначені всім ресурсам
+  common_tags = {
+    Service = local.service_name
+    Owner = local.owner
+  }
+}
