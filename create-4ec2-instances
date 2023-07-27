@@ -1,0 +1,14 @@
+provider "aws" {
+  region = "us-east-1"  # Замініть це на регіон, який вам потрібен
+}
+
+resource "aws_instance" "server" {
+  count = 4  # Створити чотири інстанси
+
+  ami           = "ami-a1b2c3d4"  # Замініть це на ID відповідного AMI
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "Server ${count.index}"
+  }
+}
