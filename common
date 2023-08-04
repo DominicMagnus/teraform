@@ -1,0 +1,17 @@
+terraform workspace new development
+terraform workspace list
+terraform workspace select development
+
+### Create
+
+terraform init
+terraform apply
+terraform plan
+terraform validate # check config sintax
+terraform show
+
+### Delete
+
+terraform init
+terraform plan -destroy
+terraform destroy
