@@ -1,0 +1,14 @@
+## https://www.terraform.io/downloads.html
+
+## Extract the contents of the zip archive to a directory of your choice (e.g., C:\apps\terraform).
+
+## Add the directory containing the Terraform executable to your system's PATH environment variable:
+    Right-click on the Windows Start button and select "System".
+    Click on "Advanced system settings" on the left.
+    In the "System Properties" window, click the "Environment Variables" button.
+    In the "System Variables" section, find the "Path" variable, select it, and click "Edit".
+    Click "New" and add the path to the directory containing the Terraform executable (e.g., C:\apps\terraform).
+    Click "OK" to close the windows.
+
+terraform version
+
