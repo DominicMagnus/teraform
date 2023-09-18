@@ -1,6 +1,7 @@
 terraform workspace new development
 terraform workspace list
 terraform workspace select development
+terraform workspace delete development
 
 ### Create
 
