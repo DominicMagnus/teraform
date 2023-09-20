@@ -1,0 +1,33 @@
+data "vsphere_datacenter" "datacenter" {	
+name = "Datacenter"	
+}	
+	
+data "vsphere_datastore" "datastore" {	
+name = "vsanDatastore"	
+datacenter_id = data.vsphere_datacenter.datacenter.id	
+}	
+	
+data "vsphere_network" "network" {	
+name = "Test-net1"	
+datacenter_id = data.vsphere_datacenter.datacenter.id	
+}	
+	
+resource "vsphere_virtual_machine" "vm" {	
+name             = "ter-test-01"	
+resource_pool_id = "resgroup-77777"	
+datastore_id     = data.vsphere_datastore.datastore.id	
+folder           = "folder/test-folder-2"	
+	
+num_cpus = 1	
+memory   = 1024	
+guest_id         = "other3xLinux64Guest"	
+	
+network_interface {	
+network_id = data.vsphere_network.network.id	
+}	
+	
+disk {	
+label = "disk0"	
+size  = 15	
+}	
+}	
