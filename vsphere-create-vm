@@ -1,3 +1,11 @@
+provider "vsphere" {
+user           = "use@site.com"
+password       = "password"
+vsphere_server = "ip"
+allow_unverified_ssl = true
+}
+
+
 data "vsphere_datacenter" "datacenter" {	
 name = "Datacenter"	
 }	
